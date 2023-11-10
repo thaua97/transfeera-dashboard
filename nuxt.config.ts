@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   googleFonts: {
     useStylesheet: true,
     families: {
-      Roboto: true,
+      Roboto: [300, 400, 500, 600, 800],
     }
   },
   pinia: {

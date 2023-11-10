@@ -1,9 +1,14 @@
 <template>
   <section class="receivers-table">
-    <UTable 
+    <UTable
       v-model="selected" 
       :rows="receivers"
       :columns="columns"
+      :ui="{
+        divide: 'divide-y-0 divide-x-0',
+        thead: 'divide-y-0',
+        tbody:'divide-y-0',
+      }"
     >
       <template #name-data="{ row }">
         <span :class="[selected.find(person => person.id === row.id) && 'text-primary-500 dark:text-primary-400']">{{ row.name }}</span>

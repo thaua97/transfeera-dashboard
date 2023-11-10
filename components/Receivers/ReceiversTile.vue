@@ -2,14 +2,16 @@
   <section class="receivers-tile">
     <div class="receivers-tile__label">
       <h1 class="receivers-tile__title">Seus Favorecidos</h1>
-      <button>+</button>
+      <button class="button button--round">
+        <img src="~assets/images/plus.svg" alt="plus">
+      </button>
     </div>
     <UInput
       icon="i-heroicons-magnifying-glass-20-solid"
-      size="sm"
+      size="lg"
       color="white"
       trailing
-      placeholder="Search..."
+      placeholder="Nome, CPF/CNPJ, Agencia ou conta"
     />
   </section>
 </template>
