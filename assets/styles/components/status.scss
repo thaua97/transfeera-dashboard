@@ -1,0 +1,18 @@
+.status {
+  max-width: 188px;
+  height: 30px;
+  border-radius: 100px;
+  padding: .5rem 4.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $neutral;
+
+  &--rascunho {
+    background-color: $neutral-400;
+  }
+
+  &--validado {
+    background-color: $blue-300;
+  }
+}

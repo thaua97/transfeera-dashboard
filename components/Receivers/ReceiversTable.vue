@@ -15,9 +15,7 @@
       </template>
 
       <template #status-data="{ row }">
-        <UDropdown :items="items(row)">
-          <UButton color="gray" variant="ghost" icon="i-heroicons-ellipsis-horizontal-20-solid" />
-        </UDropdown>
+        <span :class="`status status--${row.status}`">{{ row.status }}</span>
       </template>
     </UTable>
   </section>
