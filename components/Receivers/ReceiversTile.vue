@@ -14,9 +14,10 @@
       placeholder="Nome, CPF/CNPJ, Agencia ou conta"
     />
   </section>
-  <UModal v-model="isOpen" fullscreen>
+  <ScreenModal :show="isOpen" @close="isOpen = false">
     <ReceiversForm />
-  </UModal>
+  </ScreenModal>
+      
 </template>
 
 <script setup lang="ts">
