@@ -1,0 +1,32 @@
+.button {
+  padding: 10px;
+  border-radius: .25rem;
+  background-color: $green-300;
+  color: $neutral;
+
+
+  &--confirm {
+    background-color: $blue-300;
+    color: $neutral;
+  }
+
+  &--error {
+    background-color: $red-50;
+    color: $neutral-900;
+  }
+
+  &--delete {
+    background-color: $red-300;
+    color: $neutral-900;
+  }
+
+  &--fill {
+    color: $green-300;
+    background-color: $neutral;
+    border: 1px solid $green-300;
+  }
+
+  &--round {
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,4 @@
+<template>
+  <ReceiversTile/>
+  <ReceiversTable />
+</template>

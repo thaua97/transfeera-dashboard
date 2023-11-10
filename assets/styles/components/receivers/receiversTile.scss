@@ -1,0 +1,12 @@
+.receivers-tile {
+  width: 100%;
+  padding: 2% 3.125rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 1.75rem;
+    color: $neutral-600;
+    font-weight: 200;
+  }
+}
