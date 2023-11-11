@@ -14,9 +14,9 @@
       placeholder="Nome, CPF/CNPJ, Agencia ou conta"
     />
   </section>
-  <ScreenModal :show="isOpen" @close="isOpen = false">
+  <BaseScreenModal :show="isOpen" @close="isOpen = false">
     <ReceiversForm />
-  </ScreenModal>
+  </BaseScreenModal>
       
 </template>
 

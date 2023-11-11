@@ -1,10 +1,10 @@
 <template>
-  <header class="header">
-    <div class="header__brand">
+  <header class="base-header">
+    <div class="base-header__brand">
       <img src="~assets/images/logo.svg" alt="logo">
     </div>
-    <nav class="header__navigation">
-      <nuxt-link class="header__link" to="/favorecidos">Seus Favorecidos</nuxt-link>
+    <nav class="base-header__navigation">
+      <nuxt-link class="base-header__link" to="/favorecidos">Seus Favorecidos</nuxt-link>
     </nav>
   </header>
 </template>
@@ -16,7 +16,7 @@ export default {
 </script >
 
 <style lang="scss" scoped>
-.header {
+.base-header {
   width: 100%;
   background-color: $neutral;
   display: flex;

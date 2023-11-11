@@ -1,7 +1,7 @@
 <template>
-  <Header />
+  <BaseHeader />
   <section class="layout">
     <slot></slot>
   </section>
-  <Footer />
+  <BaseFooter />
 </template>

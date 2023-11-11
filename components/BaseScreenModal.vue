@@ -1,11 +1,11 @@
 <template>
-  <div v-if="show" class="screen-modal">
-    <header class="screen-modal__header">
+  <div v-if="show" class="base-screen-modal">
+    <header class="base-screen-modal__header">
       <button @click="$emit('close')">
         <img src="~assets/images/close.svg" alt="close">
       </button>
     </header>
-    <section class="screen-modal__content">
+    <section class="base-screen-modal__content">
       <slot></slot>
     </section>
   </div>
@@ -18,7 +18,7 @@ defineProps<{
 </script>
 
 <style lang="scss" scoped>
-.screen-modal {
+.base-screen-modal {
   position: absolute;
   top: 50px;
   left: 0;
