@@ -23,3 +23,24 @@
 <script setup lang="ts">
 const isOpen = ref(false)
 </script>
+
+<style lang="scss">
+  .receivers-tile {
+    width: 100%;
+    padding: 2.8125rem 3.125rem;
+    display: flex;
+    justify-content: space-between;
+
+    &__label {
+      display: flex;
+      width: 100%;
+      gap: 1rem;
+    }
+
+    &__title {
+      font-size: 1.75rem;
+      color: $neutral-600;
+      font-weight: 300;
+    }
+  }
+</style>

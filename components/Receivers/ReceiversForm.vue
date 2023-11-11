@@ -1,8 +1,8 @@
 <template>
   <UForm :schema="schema" :state="state" @submit="onSubmit">
-      <h1>Quais os dados favorecido?</h1>
-      <div class="grid grid-cols-2 gap-4">
-        <UFormGroup class="" label="Qual o nome completo ou razão social do favorecido?" name="email">
+      <h1 class="text-3xl font-light py-14">Quais os dados favorecido?</h1>
+      <div class="grid grid-cols-2 gap-y-10 gap-x-8">
+        <UFormGroup class="font-light" label="Qual o nome completo ou razão social do favorecido?" name="email">
           <UInput v-model="state.email" />
         </UFormGroup>
         <UFormGroup label="Qual o CPF ou CNPJ?" name="password">
@@ -12,8 +12,9 @@
           <UInput v-model="state.password" type="password" />
         </UFormGroup>
       </div>
-      <h1>Qual a chave pix?</h1>
-      <div class="grid grid-cols-2">
+      
+      <h1 class="text-3xl font-light py-14">Qual a chave pix?</h1>
+      <div class="grid grid-cols-2 gap-y-8">
         <UFormGroup class="col-start-1 col-end-1" label="Tipo de chave" name="email">
           <UInput v-model="state.email" />
         </UFormGroup>
@@ -21,7 +22,8 @@
           <UInput v-model="state.email" />
         </UFormGroup>
       </div>
-      <footer>
+
+      <footer class="flex justify-between pt-24">
         <button class="button button--fill">Cancelar</button>
         <button class="button button--confirm">Salvar</button>
       </footer>
@@ -35,10 +37,10 @@
   const isOpen = ref(false)
 
   const schema = object({
-    email: string().email('Invalid email').required('Required'),
+    email: string().email('Invalid email').required('Necessario preencher o campo'),
     password: string()
       .min(8, 'Must be at least 8 characters')
-      .required('Required')
+      .required('Necessario preencher o campo')
   })
 
   type Schema = InferType<typeof schema>

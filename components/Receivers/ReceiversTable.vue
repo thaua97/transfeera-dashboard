@@ -23,7 +23,6 @@
 </template>
 
 <script setup>
-
   const items = (row) => [
     [{
       label: 'Edit',
@@ -139,3 +138,12 @@
 
   const selected = ref([receivers[1]])
 </script>
+
+<style lang="scss" scoped>
+.receivers-table {
+  width: 100%;
+  height: 100vh; 
+  padding: $layout-marge;
+  background-color: $neutral;
+}
+</style>

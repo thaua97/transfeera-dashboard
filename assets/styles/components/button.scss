@@ -8,6 +8,7 @@
   &--confirm {
     background-color: $blue-300;
     color: $neutral;
+    padding: 1.125rem 3.375rem;
   }
 
   &--error {
@@ -24,6 +25,13 @@
     color: $green-300;
     background-color: $neutral;
     border: 1px solid $green-300;
+    padding: 1.125rem 3.375rem;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      color: $neutral;
+      background-color: $green-300;
+    }
   }
 
   &--round {
