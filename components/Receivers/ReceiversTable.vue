@@ -14,7 +14,7 @@
           <th>
             <UCheckbox value="true" />
           </th>
-          <th class="cursor-pointer" @click="receiverModal = true">{{ row.name }}</th>
+          <th class="cursor-pointer" @click="(receiverModal = true, context = row)">{{ row.name }}</th>
           <th>{{ row.tax_id }}</th>
           <th>{{ row.bank_name || '-/-' }}</th>
           <th>{{ row.branch || '-/-' }}</th>
@@ -26,25 +26,27 @@
       </template>
     </BaseTable>
   </section>
-  <BaseModal :show="receiverModal" @close="receiverModal = false" >    
+
+  <BaseModal :show="receiverModal" @close="receiverModal = false" >
+    <ReceiversForm v-if="context.status === 'rascunho'"/>
     <article v-if="deleteContent" class="delete-content">
       <h1>Excluir favorecido</h1>
-      <h3>Você confirma a exclusão do favorecido Gui Damian Verdasca?</h3>
+      <h3>Você confirma a exclusão do favorecido {{ context.name }}?</h3>
       <p>O Histórico de pagamentos para este favorecido será mantido, mas ele será removido da sua lista de favorecidos.</p>
     </article>
-    <ReceiversDetails  v-else/>
+    <ReceiversDetails :receiverContext="context" v-if="context.status === 'validado'"/>
+
     <template  v-if="deleteContent" #footer>
       <button class="base-button base-button--fill" @click="deleteContent = false">Voltar</button>
-      <button class="base-button base-button--delete" @click="receiverModal = false">Confirmar exclusão</button>  
+      <button class="base-button base-button--delete" @click="deleteAction(context.id)">Confirmar exclusão</button>  
     </template>
-    <template  v-else #footer>
+    <template  v-else-if="context.status === 'validado'" #footer>
       <button class="base-button base-button--fill" @click="receiverModal = false">Voltar</button>
       <div class="flex justify-between gap-2">
         <button class="base-button base-button--delete" @click="deleteContent = true"><IconTrash /></button>
         <button class="base-button base-button--confirm">Salvar</button>
       </div>
     </template>
-   
   </BaseModal>
 </template>
 
@@ -54,6 +56,10 @@
 
   const receiversData = useReceiversStore()
 
+  const context = ref({})
+  const receiverModal = ref(false)
+  const deleteContent = ref(false)
+
   onMounted(async () => {
     await receiversData.setReceivers()
   })
@@ -62,8 +68,11 @@
     return receiversData.getReceivers
   });
 
-  const receiverModal = ref(false)
-  const deleteContent = ref(false)
+  async function deleteAction (id) {
+    await receiversData.handleDeleteReceiver(id)
+    this.receiverModal = false
+    this.deleteContent = false
+  }
 </script>
 
 <style lang="scss" scoped>

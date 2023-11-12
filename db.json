@@ -1,22 +1,6 @@
 {
   "receivers": [
     {
-      "id": "0accb825-db24-4288-9f29-c88b9ec656da",
-      "name": "Julia Silva",
-      "email": "julia.silva@exemplo.com",
-      "tax_id": "59738860000170",
-      "branch": null,
-      "account": null,
-      "account_type": null,
-      "bank_name": null,
-      "bank_code": null,
-      "pix_key": "9afe6a96-6b27-4acc-acf0-59159076c578",
-      "pix_key_type": "aleatoria",
-      "status": "rascunho",
-      "created_at": "2023-10-25 16:00:10-03",
-      "updated_at": "2023-10-25 16:00:10-03"
-    },
-    {
       "id": "37f7e55c-b2a9-4cc6-a8fd-8062925f86c8",
       "name": "Rafael Costa",
       "email": "rafael.costa@exemplo.com",
@@ -93,22 +77,6 @@
       "updated_at": "2023-10-25 16:05:10-03"
     },
     {
-      "id": "15c7117f-72aa-4651-82fb-a3c2e0b848a5",
-      "name": "Luana Oliveira",
-      "email": "luana.oliveira@exemplo.com",
-      "tax_id": "59738860000170",
-      "branch": null,
-      "account": null,
-      "account_type": null,
-      "bank_name": null,
-      "bank_code": null,
-      "pix_key": "05a4861a-e2e6-4169-a79c-1292faa2e893",
-      "pix_key_type": "aleatoria",
-      "status": "rascunho",
-      "created_at": "2023-10-25 16:06:10-03",
-      "updated_at": "2023-10-25 16:06:10-03"
-    },
-    {
       "id": "ceadc953-5f89-43b3-8f00-05a1b24997dc",
       "name": "Guilherme Santos",
       "email": "guilherme.santos@exemplo.com",
@@ -121,36 +89,6 @@
       "status": "validado",
       "created_at": "2023-10-25 16:07:10-03",
       "updated_at": "2023-10-25 16:07:10-03"
-    },
-    {
-      "id": "4220607f-b5e2-4bff-85d8-0030d638cfc1",
-      "name": "Lucas Pereira",
-      "email": "lucas.pereira@exemplo.com",
-      "tax_id": "79915139000115",
-      "branch": null,
-      "account": null,
-      "account_type": null,
-      "bank_name": null,
-      "bank_code": null,
-      "pix_key": "79915139000115",
-      "pix_key_type": "cnpj",
-      "status": "rascunho",
-      "created_at": "2023-10-25 16:08:10-03",
-      "updated_at": "2023-10-25 16:08:10-03"
-    },
-    {
-      "id": "037d4eab-b001-4b1f-b629-88d347f83a7c",
-      "name": "Luana Pereira",
-      "email": "luana.pereira@exemplo.com",
-      "tax_id": "24334548000136",
-      "branch": null,
-      "account": null,
-      "account_type": null,
-      "bank_name": null,
-      "bank_code": null,
-      "status": "rascunho",
-      "created_at": "2023-10-25 16:09:10-03",
-      "updated_at": "2023-10-25 16:09:10-03"
     },
     {
       "id": "44661e0b-f2f2-49ee-803e-1fc6219c59c4",
@@ -321,6 +259,23 @@
       "status": "rascunho",
       "created_at": "2023-10-25 16:20:10-03",
       "updated_at": "2023-10-25 16:20:10-03"
+    },
+    {
+      "name": "teste",
+      "tax_id": "testeasdasdas",
+      "email": "thaua.dev@gmail.com",
+      "pix_key": "asdasdasdasd",
+      "pix_key_type": "cpf",
+      "id": "6nhxnR1"
+    },
+    {
+      "name": "teste",
+      "tax_id": "04277761046",
+      "email": "thaua.dev@gmail.com",
+      "pix_key": "thaua.dev@gmail.com",
+      "pix_key_type": "cpf",
+      "status": "rascunho",
+      "id": "HpohW30"
     }
   ]
 }

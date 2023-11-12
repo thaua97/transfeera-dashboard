@@ -14,7 +14,42 @@ export const useReceiversStore = defineStore('receivers', {
       try {
         const res = await items.fetchReceivers()
         this.receivers = res.data
-        console.log(res)
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
+    async handleCreateReceiver (receiver) {
+      const promise = new api.Receivers()
+
+      try {
+        const res = await promise.createReceiver(receiver)
+
+        if(res) {
+          this.receivers = [...this.receivers, receiver]
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
+    async handleUpdateReceiver (receiver) {
+      const promise = new api.Receivers()
+
+      try {
+        const res = await promise.updateReceiver(receiver)
+        this.setReceivers()
+      } catch (error) {
+        console.error(error)
+      }
+    },
+
+    async handleDeleteReceiver (id) {
+      const promise = new api.Receivers()
+
+      try {
+        const res = await promise.deleteReceiver(id)
+        this.setReceivers()
       } catch (error) {
         console.error(error)
       }

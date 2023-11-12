@@ -52,6 +52,9 @@
   import { object, string, type InferType } from 'yup'
   import type { FormSubmitEvent } from '#ui/types'
   import { PIX_KEY_OPTINOS } from '~/constants/financial'
+  import { useReceiversStore } from '~/stores/receivers'
+
+  const receiversData = useReceiversStore()
 
   const schema = object({
     email: string()
@@ -75,11 +78,12 @@
     tax_id: undefined,
     email: undefined,
     pix_key: undefined,
-    pix_key_type: undefined
+    pix_key_type: undefined,
+    status: 'rascunho'
   })
 
   async function onSubmit (event: FormSubmitEvent<Schema>) {
-    // Do something with event.data
+    await receiversData.handleCreateReceiver(event.data)
     console.log(event.data)
   }
 </script>

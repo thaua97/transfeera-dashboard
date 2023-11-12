@@ -1,34 +1,36 @@
 <template>
   <main class="receivers-details">
     <header class="receivers-details__header">
-      <h1>Guilherme Damian Verdasca</h1>
-      <span class="base-status base-status--rascunho">Rascunho</span>
+      <h1>{{ receiverContext.name }}</h1>
+      <span :class="`base-status base-status--${receiverContext.status}`">
+        {{ receiverContext.status }}
+      </span>
     </header>
     <article class="receivers-details__content">
       <section class="receivers-details__row">
         <div>
           <p>CPF / CNPJ</p>
-          <h1>067.956.219.28</h1>
+          <h1>{{ receiverContext.tax_id  || '- / -' }}</h1>
         </div>
       </section>
       <section class="receivers-details__row">
         <div>
           <p>Banco</p>
-          <h1>Santander</h1>
+          <h1>{{ receiverContext.bank_name || '- / -' }}</h1>
         </div>
         <div>
           <p>Agencia</p>
-          <h1>0233</h1>
+          <h1>{{ receiverContext.branch || '- / -' }}</h1>
         </div>
       </section>
       <section class="receivers-details__row">
         <div>
           <p>Tipo de conta</p>
-          <h1>Conta Poupança</h1>
+          <h1>{{ receiverContext.account_type || '- / -' }}</h1>
         </div>
         <div>
-          <p>Conta poupanca</p>
-          <h1>01006822-1</h1>
+          <p>{{ receiverContext.account_type || '- / -' }}</p>
+          <h1>{{ receiverContext.account || '- / -' }}</h1>
         </div>
       </section>
       <section class="receivers-details__row">
@@ -38,9 +40,8 @@
               <p>E-mail do favorecido</p>
             </template>
             <template #default>
-              <UInput v-model="receiver.email" type="email" />
+              <UInput v-model="receiverContext.email" type="email" />
             </template>
-            
           </UFormGroup>
         </UForm>
       </section>
@@ -52,6 +53,19 @@
 // @ts-ignore
 import { object, string, type InferType } from 'yup'
 import type { FormSubmitEvent } from '#ui/types'
+
+defineProps<{
+  receiverContext: {
+    name: string,
+    email: string,
+    tax_id: string,
+    bank_name: string,
+    branch: string,
+    account_type: string,
+    account: string,
+    status: string,
+  }
+}>()
 
 const receiver = reactive({
   email: undefined,
