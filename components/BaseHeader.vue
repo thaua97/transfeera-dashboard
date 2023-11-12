@@ -1,7 +1,7 @@
 <template>
   <header class="base-header">
     <div class="base-header__brand">
-      <img src="~assets/images/logo.svg" alt="logo">
+      <IconLogo />
     </div>
     <nav class="base-header__navigation">
       <nuxt-link class="base-header__link" to="/favorecidos">Seus Favorecidos</nuxt-link>

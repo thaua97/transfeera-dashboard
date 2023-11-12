@@ -16,9 +16,9 @@
           </th>
           <th class="cursor-pointer" @click="receiverModal = true">{{ row.name }}</th>
           <th>{{ row.tax_id }}</th>
-          <th>{{ row.bank_name }}</th>
-          <th>{{ row.branch }}</th>
-          <th>{{ row.account }}</th>
+          <th>{{ row.bank_name || '-/-' }}</th>
+          <th>{{ row.branch || '-/-' }}</th>
+          <th>{{ row.account || '-/-' }}</th>
           <th>
             <span :class="`status status--${row.status}`">{{ row.status }}</span>
           </th>

@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/styles/index.scss'],
+  components: [
+    { path: '~/shared/icons', prefix: 'Icon' },
+    '~/components',
+  ],
   modules: [
     '@pinia/nuxt',
     '@nuxtjs/google-fonts',

@@ -3,7 +3,7 @@
     <div class="receivers-tile__label">
       <h1 class="receivers-tile__title">Seus Favorecidos</h1>
       <button class="button button--round" @click="isOpen = true" >
-        <img src="~assets/images/plus.svg" alt="plus">
+        <IconPlus />
       </button>
     </div>
     <UInput

@@ -2,7 +2,7 @@
   <div v-if="show" class="base-screen-modal">
     <header class="base-screen-modal__header">
       <button @click="$emit('close')">
-        <img src="~assets/images/close.svg" alt="close">
+        <IconClose />
       </button>
     </header>
     <section class="base-screen-modal__content">
@@ -19,10 +19,11 @@ defineProps<{
 
 <style lang="scss" scoped>
 .base-screen-modal {
-  position: absolute;
+  position: fixed;
   top: 50px;
   left: 0;
   width: 100%;
+  height: 100%;
   background: $neutral;
   display: flex;
   flex-direction: column;
@@ -40,6 +41,10 @@ defineProps<{
     color: $neutral;
     display: flex;
     justify-content: flex-end;
+
+    svg {
+      fill: $neutral;
+    }
   }
 
   &__content {

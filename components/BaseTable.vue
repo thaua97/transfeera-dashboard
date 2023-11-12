@@ -5,8 +5,11 @@
     </thead>
     <tbody class="base-table__rows">
       <slot name="rows"></slot>
-    </tbody>
+    </tbody>  
   </table>
+  <footer class="base-table__footer">
+    <IconLogoFooter />
+  </footer>
 </template>
 
 <script setup lang="ts">
@@ -32,6 +35,14 @@
       text-align: left;
       color: $neutral-400;
     }
+  }
+
+  &__footer {
+    padding: 50px;
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>
