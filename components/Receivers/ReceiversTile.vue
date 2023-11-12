@@ -2,7 +2,7 @@
   <section class="receivers-tile">
     <div class="receivers-tile__label">
       <h1 class="receivers-tile__title">Seus Favorecidos</h1>
-      <button class="button button--round" @click="isOpen = true" >
+      <button class="base-button base-button--round" @click="isOpen = true" >
         <IconPlus />
       </button>
     </div>

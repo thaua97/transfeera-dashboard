@@ -1,14 +1,15 @@
-.button {
-  padding: 10px;
+.base-button {
+  padding: .625rem !important;
   border-radius: .25rem;
   background-color: $green-300;
   color: $neutral;
 
-
   &--confirm {
+    width: auto;
+    height: 100%;
     background-color: $blue-300;
     color: $neutral;
-    padding: 1.125rem 3.375rem;
+    padding: 1.125rem 3.375rem !important;
   }
 
   &--error {
@@ -18,14 +19,15 @@
 
   &--delete {
     background-color: $red-300;
-    color: $neutral-900;
+    color: $neutral;
+    padding: 1.125rem !important;
   }
 
   &--fill {
     color: $green-300;
     background-color: $neutral;
-    border: 1px solid $green-300;
-    padding: 1.125rem 3.375rem;
+    border: 1px solid $green-300 !important;
+    padding: 1.125rem 3.375rem !important;
     transition: all .2s ease-in-out;
 
     &:hover {

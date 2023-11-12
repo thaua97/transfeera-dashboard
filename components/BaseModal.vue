@@ -10,13 +10,24 @@
       }
     }"
   >
-    <UCard :ui="{ ring: '', divide: '' }">
+    <UCard :ui="{ 
+      ring: '',
+      divide: '',
+      header: {
+        padding: 'px-4 py-0 sm:pt-4 sm:pb-0 sm:px-6'
+      },
+    }">
       <template #header>
         <div class="flex justify-end">
           <IconClose @click="$emit('close')"/>
         </div>
       </template>
       <slot></slot>
+      <template #footer>
+        <div class="flex justify-between" >
+          <slot name="footer"></slot>
+        </div>
+      </template>
     </UCard>
   </UModal>
 </template>
@@ -32,7 +43,6 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 <style lang="scss" scoped>
 .base-modal {
-  width: 100%;
   svg {
     cursor: pointer;
     fill: $neutral-900;

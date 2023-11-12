@@ -41,8 +41,8 @@
       </div>
 
       <footer class="flex justify-between pt-24">
-        <button class="button button--fill">Cancelar</button>
-        <button class="button button--confirm">Salvar</button>
+        <button class="base-button base-button--fill">Cancelar</button>
+        <button class="base-button base-button--confirm">Salvar</button>
       </footer>
     </UForm>
 </template>

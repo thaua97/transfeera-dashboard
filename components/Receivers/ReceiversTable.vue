@@ -20,14 +20,31 @@
           <th>{{ row.branch || '-/-' }}</th>
           <th>{{ row.account || '-/-' }}</th>
           <th>
-            <span :class="`status status--${row.status}`">{{ row.status }}</span>
+            <span :class="`base-status base-status--${row.status}`">{{ row.status }}</span>
           </th>
         </tr>
       </template>
     </BaseTable>
   </section>
-  <BaseModal :show="receiverModal" @close="receiverModal = false" >
-    Teste
+  <BaseModal :show="receiverModal" @close="receiverModal = false" >    
+    <article v-if="deleteContent" class="delete-content">
+      <h1>Excluir favorecido</h1>
+      <h3>Você confirma a exclusão do favorecido Gui Damian Verdasca?</h3>
+      <p>O Histórico de pagamentos para este favorecido será mantido, mas ele será removido da sua lista de favorecidos.</p>
+    </article>
+    <ReceiversDetails  v-else/>
+    <template  v-if="deleteContent" #footer>
+      <button class="base-button base-button--fill" @click="deleteContent = false">Voltar</button>
+      <button class="base-button base-button--delete" @click="receiverModal = false">Confirmar exclusão</button>  
+    </template>
+    <template  v-else #footer>
+      <button class="base-button base-button--fill" @click="receiverModal = false">Voltar</button>
+      <div class="flex justify-between gap-2">
+        <button class="base-button base-button--delete" @click="deleteContent = true"><IconTrash /></button>
+        <button class="base-button base-button--confirm">Salvar</button>
+      </div>
+    </template>
+   
   </BaseModal>
 </template>
 
@@ -46,6 +63,7 @@
   });
 
   const receiverModal = ref(false)
+  const deleteContent = ref(false)
 </script>
 
 <style lang="scss" scoped>
@@ -53,5 +71,25 @@
   width: 100%;
   padding: $layout-marge;
   background-color: $neutral;
+
+  footer {
+    padding-top: 1.5rem;
+  }
 }
+
+.delete-content {
+  p {
+    color: $neutral-600;
+    font-weight: 300;
+    padding-bottom: .875rem;
+  }
+  
+  h1 {
+    color: $neutral-800;
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+} 
 </style>
