@@ -16,7 +16,7 @@
           </th>
           <th class="cursor-pointer" @click="(receiverModal = true, context = row)">{{ row.name }}</th>
           <th>{{ row.tax_id }}</th>
-          <th>{{ row.bank_name || '-/-' }}</th>
+          <th><IconBanks :name="row.bank_name" /></th>
           <th>{{ row.branch || '-/-' }}</th>
           <th>{{ row.account || '-/-' }}</th>
           <th>

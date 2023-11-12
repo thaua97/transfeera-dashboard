@@ -2,7 +2,6 @@
   <UForm :schema="schema" :state="receiver" @submit="onSubmit">
       <h1 class="text-3xl font-light py-14">Quais os dados favorecido?</h1>
       <div class="grid grid-cols-2 gap-y-10 gap-x-8">
-
         <UFormGroup class="font-light" name="name">
           <template #label>
             <label class="font-light py-" for="name">
@@ -25,8 +24,16 @@
           </template>
           
         </UFormGroup>
-        <UFormGroup label="Qual o e-mail para o envio do comprovante?" name="email">
-          <UInput v-model="receiver.email" type="email" />
+        <UFormGroup name="email">
+          <template #label>
+            <label class="font-light py-7" for="name">
+              Qual o e-mail para o envio do comprovante?
+            </label>
+          </template>
+          <template #default>
+            <UInput v-model="receiver.email" type="email" />
+          </template>
+          
         </UFormGroup>
       </div>
       
@@ -51,6 +58,7 @@
   // @ts-ignore
   import { object, string, type InferType } from 'yup'
   import type { FormSubmitEvent } from '#ui/types'
+
   import { PIX_KEY_OPTINOS } from '~/constants/financial'
   import { useReceiversStore } from '~/stores/receivers'
 
