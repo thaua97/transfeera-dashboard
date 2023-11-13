@@ -1,5 +1,14 @@
 # Tech Challenge Transfeera
+Modulo de Favorecidos.
 
+#### Sumario
+[Objetivo](#objetivo)
+[Tecnologias](#tecnologias)
+[Passo a passos](#passo-a-passos)
+[Planejamento](#planejamento)
+[Estrutura de pastas](#-estrutura-de-pastas)
+
+## Objetivo
 O objetivo do desafio é transformar o design em um sistema funcional na web, integrando-o com a biblioteca JSON Server junto com o JSON fornecido, para simular um back-end para a aplicação. O sistema inclui funcionalidades de listagem com filtros, inclusão, edição e remoção de recebedores de pagamento.
 
 [Design do figma]('https://www.figma.com/proto/8zSuDeDe8yI9zxP2mVKZnp/Teste-%7C-Dev?page-id=0%3A1&node-id=0-86&viewport=560%2C387%2C0.21&scaling=min-zoom&starting-point-node-id=0%3A86&t=RoxfOIyyIU4G1Duv-1')
