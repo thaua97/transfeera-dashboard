@@ -3,6 +3,7 @@
     class="base-modal" 
     v-model="props.show" 
     :ui="{
+      width: props.modalWidth,
       margin: 'sm:my-16',
       container: 'flex min-h-full items-start sm:items-start justify-center text-center',
       overlay: {
@@ -25,7 +26,7 @@
       <slot></slot>
       <template #footer>
         <div class="flex justify-between" >
-          <slot name="footer"></slot>
+          <slot class="base-modal__footer" name="footer"></slot>
         </div>
       </template>
     </UCard>
@@ -34,12 +35,15 @@
 <script setup lang="ts">
 
 export interface Props {
-  show: boolean
+  show: boolean,
+  modalWidth: string,
 }
 
 const props = withDefaults(defineProps<Props>(), {
   show: false,
+  modalWidth: 'sm:max-w-xl',
 })
+
 </script>
 <style lang="scss" scoped>
 .base-modal {

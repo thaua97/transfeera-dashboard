@@ -6,16 +6,16 @@ export default class Receivers extends useApi {
     super('api', API_URL);
   }
 
-  fetchReceivers() {
-    return this.api.get('/receivers?_page=1&_limit=10')
+  fetchReceivers(page) {
+    return this.api.get(`/receivers?_page=${page}&_limit=8`)
   }
 
   createReceiver(receiver) {
     return this.api.post('/receivers', receiver)
   }
   
-  updateReceiver(receiver) {
-    return this.api.put(`/receivers/${receiver.id}`, receiver)
+  updateReceiver(id, receiver) {
+    return this.api.put(`/receivers/${id}`, receiver)
   }
 
   deleteReceiver(receiverId) {

@@ -8,6 +8,7 @@
     </tbody>  
   </table>
   <footer class="base-table__footer">
+    <slot name="footer"></slot>
     <IconLogoFooter />
   </footer>
 </template>
@@ -40,7 +41,9 @@
   &__footer {
     padding: 50px;
     width: 100%;
-    display: flex; 
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; 
     align-items: center;
     justify-content: center;
   }

@@ -1,36 +1,36 @@
 <template>
   <main class="receivers-details">
     <header class="receivers-details__header">
-      <h1>{{ receiverContext.name }}</h1>
-      <span :class="`base-status base-status--${receiverContext.status}`">
-        {{ receiverContext.status }}
+      <h1>{{ props.receiverContext.name }}</h1>
+      <span :class="`base-status base-status--${props.receiverContext.status}`">
+        {{ RECEIVERS_STATUS[props.receiverContext.status] }}
       </span>
     </header>
     <article class="receivers-details__content">
       <section class="receivers-details__row">
         <div>
           <p>CPF / CNPJ</p>
-          <h1>{{ receiverContext.tax_id  || '- / -' }}</h1>
+          <h1>{{ formatTaxId(props.receiverContext.tax_id)  || '- / -' }}</h1>
         </div>
       </section>
       <section class="receivers-details__row">
         <div>
           <p>Banco</p>
-          <h1>{{ receiverContext.bank_name || '- / -' }}</h1>
+          <h1>{{ props.receiverContext.bank_name || '- / -' }}</h1>
         </div>
         <div>
           <p>Agencia</p>
-          <h1>{{ receiverContext.branch || '- / -' }}</h1>
+          <h1>{{ props.receiverContext.branch || '- / -' }}</h1>
         </div>
       </section>
       <section class="receivers-details__row">
         <div>
           <p>Tipo de conta</p>
-          <h1>{{ receiverContext.account_type || '- / -' }}</h1>
+          <h1>{{ props.receiverContext.account_type || '- / -' }}</h1>
         </div>
         <div>
-          <p>{{ receiverContext.account_type || '- / -' }}</p>
-          <h1>{{ receiverContext.account || '- / -' }}</h1>
+          <p>{{ props.receiverContext.account_type || '- / -' }}</p>
+          <h1>{{ props.receiverContext.account || '- / -' }}</h1>
         </div>
       </section>
       <section class="receivers-details__row">
@@ -40,7 +40,7 @@
               <p>E-mail do favorecido</p>
             </template>
             <template #default>
-              <UInput v-model="receiverContext.email" type="email" />
+              <UInput v-model="props.receiverContext.email" type="email" />
             </template>
           </UFormGroup>
         </UForm>
@@ -53,8 +53,9 @@
 // @ts-ignore
 import { object, string, type InferType } from 'yup'
 import type { FormSubmitEvent } from '#ui/types'
+import {  RECEIVERS_STATUS } from '~/constants/interface'
 
-defineProps<{
+const props = defineProps<{
   receiverContext: {
     name: string,
     email: string,
@@ -63,14 +64,16 @@ defineProps<{
     branch: string,
     account_type: string,
     account: string,
-    status: string,
+    status: any | string,
   }
 }>()
 
 const receiver = reactive({
   email: undefined,
 })
-
+const statusFormated = computed(() => {
+  return props.receiverContext.status
+})
 const schema = object({
   email: string()
     .email('E-mail invalido')

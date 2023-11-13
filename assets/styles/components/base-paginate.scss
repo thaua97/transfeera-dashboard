@@ -1,0 +1,19 @@
+.base-paginate {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  &__action {
+    cursor: pointer;
+    &--left {
+      margin-right: 4rem;
+    }
+
+    &--right {
+       margin-left: 4rem;
+    }
+  }
+}

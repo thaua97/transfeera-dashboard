@@ -1,22 +1,6 @@
 {
   "receivers": [
     {
-      "id": "37f7e55c-b2a9-4cc6-a8fd-8062925f86c8",
-      "name": "Rafael Costa",
-      "email": "rafael.costa@exemplo.com",
-      "tax_id": "79915139000115",
-      "branch": "3402",
-      "account": "517638",
-      "account_type": "Conta Poupança",
-      "bank_name": "Santander",
-      "bank_code": "033",
-      "pix_key": "79915139000115",
-      "pix_key_type": "cnpj",
-      "status": "validado",
-      "created_at": "2023-10-25 16:01:10-03",
-      "updated_at": "2023-10-25 16:01:10-03"
-    },
-    {
       "id": "4765673f-8a2f-4048-8ce9-e94da4adfe29",
       "name": "Gabriela Santos",
       "email": "gabriela.santos@exemplo.com",
@@ -91,20 +75,13 @@
       "updated_at": "2023-10-25 16:07:10-03"
     },
     {
-      "id": "44661e0b-f2f2-49ee-803e-1fc6219c59c4",
-      "name": "Guilherme Santos",
-      "email": "guilherme.santos@exemplo.com",
+      "name": "Guilherme Santos1",
       "tax_id": "54373819050",
-      "branch": null,
-      "account": null,
-      "account_type": null,
-      "bank_name": null,
-      "bank_code": null,
-      "pix_key": "guilherme.santos@exemplo.com",
+      "email": "guilherme.santos@exemplo.com",
+      "pix_key": "guilherme.santo2s@exemplo.com",
       "pix_key_type": "email",
       "status": "rascunho",
-      "created_at": "2023-10-25 16:10:10-03",
-      "updated_at": "2023-10-25 16:10:10-03"
+      "id": "44661e0b-f2f2-49ee-803e-1fc6219c59c4"
     },
     {
       "id": "12028b9c-bbf3-4fea-b1ff-189dc2852e7f",
@@ -276,6 +253,15 @@
       "pix_key_type": "cpf",
       "status": "rascunho",
       "id": "HpohW30"
+    },
+    {
+      "name": "João Pereira",
+      "tax_id": "54373819050",
+      "email": "joao.pereira@exemplo.com",
+      "pix_key": "04277761046",
+      "pix_key_type": "cpf",
+      "status": "rascunho",
+      "id": "Fpok4xs"
     }
   ]
 }

@@ -4,16 +4,21 @@ import api from '~/services/api'
 export const useReceiversStore = defineStore('receivers', {
   state: () => ({
     receivers: [],
+    totalPages: 0,
   }),
   getters: {
     getReceivers: (state) => state.receivers,
+    getTotalPages: (state) => state.totalPages,
   },
   actions: {
-    async setReceivers() {
+    async setReceivers(page = 1) {
       const items = new api.Receivers();
       try {
-        const res = await items.fetchReceivers()
+        const res = await items.fetchReceivers(page)
+        const totalCount = res.headers.get('x-total-count')
         this.receivers = res.data
+        this.totalPages = Math.ceil(totalCount / 8)
+        console.log(res)
       } catch (error) {
         console.error(error)
       }
@@ -33,11 +38,11 @@ export const useReceiversStore = defineStore('receivers', {
       }
     },
 
-    async handleUpdateReceiver (receiver) {
+    async handleUpdateReceiver (id, receiver) {
       const promise = new api.Receivers()
-
+      console.log(id)
       try {
-        const res = await promise.updateReceiver(receiver)
+        const res = await promise.updateReceiver(id, receiver)
         this.setReceivers()
       } catch (error) {
         console.error(error)

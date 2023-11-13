@@ -1,4 +1,4 @@
-export const RECEIVERS_TABLE_HEADERS = [
+export const RECEIVERS_TABLE_HEADERS: { key: string, label: string} = [
   {
     key: "name",
     label: "Favorecido"
@@ -24,3 +24,8 @@ export const RECEIVERS_TABLE_HEADERS = [
     label: "Status do favorecido"
   },
 ]
+
+export const RECEIVERS_STATUS: { validado: string, rascunho: string} = {
+  validado: 'Validado',
+  rascunho: 'Rascunho',
+}
